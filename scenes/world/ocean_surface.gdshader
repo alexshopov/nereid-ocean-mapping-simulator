@@ -8,10 +8,10 @@ uniform vec2 direction2 = vec2(0.0, 1.0);
 uniform float scroll_speed1: hint_range(0.0, 1.0) = 0.1;
 uniform float scroll_speed2: hint_range(0.0, 1.0) = 0.02;
 
-void vertex() {
-	float wave = sin(TIME * 1.0 + VERTEX.x * 0.25);
-	VERTEX.y += wave * 2.0;
-}
+//void vertex() {
+	//float wave = sin(TIME * 1.0 + VERTEX.x * 0.25);
+	//VERTEX.y += wave * 2.0;
+//}
 
 void fragment() {
 	vec2 offset1 = scroll_speed1 * direction1 * TIME;
@@ -25,5 +25,5 @@ void fragment() {
 	ALBEDO = albedo;
 	METALLIC = 0.0;
 	ROUGHNESS = 0.01;
-	ALPHA = 0.3;
+	ALPHA = 0.5;
 }

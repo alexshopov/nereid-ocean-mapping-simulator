@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://benbqhtnb84fv"]
+
+[ext_resource type="PackedScene" uid="uid://bg8y4m0vg8j4j" path="res://assets/models/blue_boat.blend" id="1_xm4v1"]
+
+[node name="BlueBoat" type="Node3D" unique_id=2023966485]
+
+[node name="blue_boat" parent="." unique_id=1872005667 instance=ExtResource("1_xm4v1")]
