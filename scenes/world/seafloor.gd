@@ -28,6 +28,12 @@ extends MeshInstance3D
 		_update_mesh()
 
 
+func get_height_at(world_x: float, world_z: float) -> float:
+	var lx := world_x - global_position.x
+	var lz := world_z - global_position.z
+	return global_position.y + _get_height(lx, lz)
+
+
 func _get_height(x: float, y: float) -> float:
 	return noise.get_noise_2d(x, y) * height
 

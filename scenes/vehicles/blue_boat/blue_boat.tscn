@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://benbqhtnb84fv"]
 
+[ext_resource type="Script" uid="uid://n75r32v6b6r3" path="res://scenes/vehicles/blue_boat/blue_boat.gd" id="1_n1o5v"]
 [ext_resource type="PackedScene" uid="uid://bg8y4m0vg8j4j" path="res://assets/models/blue_boat.blend" id="1_xm4v1"]
+[ext_resource type="Script" uid="uid://c4ssqybl7m4v5" path="res://components/propulsion_component.gd" id="2_wh265"]
+[ext_resource type="Script" uid="uid://dchu4q1rayg5p" path="res://components/sonar_component.gd" id="3_5oqgq"]
 
 [node name="BlueBoat" type="Node3D" unique_id=2023966485]
+script = ExtResource("1_n1o5v")
 
 [node name="blue_boat" parent="." unique_id=1872005667 instance=ExtResource("1_xm4v1")]
+
+[node name="PropulsionComponent" type="Node" parent="." unique_id=1088277883]
+script = ExtResource("2_wh265")
+metadata/_custom_type_script = "uid://c4ssqybl7m4v5"
+
+[node name="SonarComponent" type="Node3D" parent="." unique_id=1718158195]
+script = ExtResource("3_5oqgq")
