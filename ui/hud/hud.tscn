@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c131u6xeqbm7x"]
+
+[ext_resource type="Script" uid="uid://2igupmef5uaj" path="res://ui/hud/hud.gd" id="1_uirr2"]
+[ext_resource type="LabelSettings" uid="uid://c8nxh1qcned8m" path="res://resources/hud_label_settings.tres" id="2_17cjk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67ri8"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.2520276, 0.25202766, 0.25202754, 1)
+
+[node name="Hud" type="PanelContainer" unique_id=1435516757]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_67ri8")
+script = ExtResource("1_uirr2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=500263927]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="VehicleIDLabel" type="Label" parent="HBoxContainer" unique_id=1640735612]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Vehicle ID: BlueBoat 001"
+label_settings = ExtResource("2_17cjk")
+
+[node name="DepthLabel" type="Label" parent="HBoxContainer" unique_id=814999139]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Depth: 060m"
+label_settings = ExtResource("2_17cjk")
+
+[node name="SpeedLabel" type="Label" parent="HBoxContainer" unique_id=873080706]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Speed: X knots"
+label_settings = ExtResource("2_17cjk")

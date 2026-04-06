@@ -37,20 +37,25 @@ func _process(delta: float) -> void:
 func _ping() -> void:
 	if not seafloor:
 		return
+
 	var origin := global_position
 	var right := global_transform.basis.x
 	var half_swath := deg_to_rad(swath_angle_deg * 0.5)
+
 	_beam_mesh.clear_surfaces()
 	_beam_mesh.surface_begin(Mesh.PRIMITIVE_LINES)
+
 	for i in beam_count:
 		var t := float(i) / float(beam_count - 1)
 		var angle : float = lerp(-half_swath, half_swath, t)
 		var dir := (right * sin(angle) + Vector3.DOWN * cos(angle)).normalized()
 		var hit := _march(origin, dir)
+
 		if hit != Vector3.INF:
 			_beam_mesh.surface_add_vertex(Vector3.ZERO)
 			_beam_mesh.surface_add_vertex(to_local(hit))
 			sonar_return.emit(PingData.new(hit, origin.y - hit.y))
+
 	_beam_mesh.surface_end()
 
 

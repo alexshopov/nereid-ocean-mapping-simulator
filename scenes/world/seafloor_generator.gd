@@ -2,6 +2,9 @@
 class_name SeafloorGenerator
 extends Node
 
+# WORK IN PROGRESS, NOT CURRENTLY ACTIVE
+
+
 @export var rand_seed: int = 42
 @export var texture_resolution: int = 512
 @export var height_scale: float = 8.0

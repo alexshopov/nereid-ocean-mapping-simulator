@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b6lacvvnih6qb"]
+
+[ext_resource type="Script" uid="uid://h566q80nbkxu" path="res://ui/bathymetric_map_panel/bathymetric_map_panel.gd" id="1_2y7rp"]
+[ext_resource type="LabelSettings" uid="uid://c8nxh1qcned8m" path="res://resources/hud_label_settings.tres" id="2_4863v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfbq2"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="BathymetricMapPanel" type="PanelContainer" unique_id=2059895533]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -551.0
+offset_right = 551.0
+offset_bottom = -50.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kfbq2")
+script = ExtResource("1_2y7rp")
+
+[node name="Label" type="Label" parent="." unique_id=1948931501]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 0
+text = "Bathymetric Map"
+label_settings = ExtResource("2_4863v")
+horizontal_alignment = 1
+
+[node name="Map" type="TextureRect" parent="." unique_id=1151815070]
+layout_mode = 2
+expand_mode = 3

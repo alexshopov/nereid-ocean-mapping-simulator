@@ -28,6 +28,10 @@ extends MeshInstance3D
 		_update_mesh()
 
 
+func _ready() -> void:
+	noise.seed = randi()
+
+
 func get_height_at(world_x: float, world_z: float) -> float:
 	var lx := world_x - global_position.x
 	var lz := world_z - global_position.z
