@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://ds2q25isequ46" path="res://data/srv/blue_boat.tres" id="2_psn46"]
 [ext_resource type="Script" uid="uid://c4ssqybl7m4v5" path="res://components/propulsion_component.gd" id="2_wh265"]
 [ext_resource type="Script" uid="uid://dchu4q1rayg5p" path="res://components/sonar_component.gd" id="3_5oqgq"]
+[ext_resource type="Script" uid="uid://bvprnvi07qesb" path="res://components/navigation_component.gd" id="5_cjaur"]
 
 [node name="BlueBoat" type="Node3D" unique_id=2023966485]
 script = ExtResource("1_psn46")
@@ -15,6 +16,10 @@ vehicle_data = ExtResource("2_psn46")
 [node name="PropulsionComponent" type="Node" parent="." unique_id=1088277883]
 script = ExtResource("2_wh265")
 metadata/_custom_type_script = "uid://c4ssqybl7m4v5"
+
+[node name="NavigationComponent" type="Node" parent="." unique_id=397710872 node_paths=PackedStringArray("propulsion_component")]
+script = ExtResource("5_cjaur")
+propulsion_component = NodePath("../PropulsionComponent")
 
 [node name="SonarComponent" type="Node3D" parent="." unique_id=1718158195]
 script = ExtResource("3_5oqgq")

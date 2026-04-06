@@ -1,8 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
+.claude/
 /android/
 
 export/
 export.zip
 
 .vscode/
+.DS_Store

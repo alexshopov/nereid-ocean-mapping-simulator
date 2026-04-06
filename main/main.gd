@@ -7,7 +7,9 @@ extends Node
 @onready var map_marker: MeshInstance3D = %MapMarker
 @onready var camera: Camera3D = $VehicleManager/BlueBoat/Camera3D
 @onready var bathy_mapping_manager: BathymetricMappingManager = $BathymetricMappingManager
-@onready var seed_label : Label = %SeedLabel
+@onready var seed_label: Label = %SeedLabel
+@onready var navigation_component: NavigationComponent = $VehicleManager/BlueBoat/NavigationComponent
+
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -18,6 +20,10 @@ func _ready() -> void:
 	sonar.sonar_return.connect(bathy_mapping_manager.on_sonar_return)
 
 	seed_label.text = "Seed: %d" % seafloor.noise.seed
+
+	blue_boat.global_position = navigation_component.get_start_position(seafloor)
+	navigation_component.init(seafloor)
+	navigation_component.start()
 
 
 func _process(_delta: float) -> void:
@@ -40,8 +46,8 @@ func _input(event: InputEvent) -> void:
 func _on_chase_camera_button_pressed() -> void:
 	camera.top_level = false
 	camera.projection = Camera3D.PROJECTION_PERSPECTIVE
-	camera.position = Vector3(0, 10, -10)
-	camera.rotation_degrees = Vector3(-35, -180, 0)
+	camera.position = Vector3(0, 10, 10)
+	camera.rotation_degrees = Vector3(-35, 0, 0)
 	map_marker.hide()
 
 

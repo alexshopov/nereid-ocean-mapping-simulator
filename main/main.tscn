@@ -139,7 +139,7 @@ script = ExtResource("6_0i4oc")
 transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, -382.8598, 0, 491.8406)
 
 [node name="Camera3D" type="Camera3D" parent="VehicleManager/BlueBoat" unique_id=2051229840]
-transform = Transform3D(-1.0000001, 5.1385825e-08, -7.0726514e-08, 0, 0.8090171, 0.58778524, 8.7422784e-08, 0.5877853, -0.809017, 0, 10.1, -10)
+transform = Transform3D(1.0000001, 0, 0, 0, 0.8090171, 0.58778524, 0, -0.5877853, 0.809017, 0, 10.1, 10)
 keep_aspect = 0
 fov = 100.2
 
@@ -168,14 +168,14 @@ bathy_mapping_manager = NodePath("../../BathymetricMappingManager")
 [node name="Hud" parent="UI" unique_id=1435516757 node_paths=PackedStringArray("vehicle_manager") instance=ExtResource("9_grrlh")]
 vehicle_manager = NodePath("../../VehicleManager")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=1889197029]
+[node name="CameraControls" type="VBoxContainer" parent="UI" unique_id=1889197029]
 offset_left = 10.0
 offset_top = 58.0
 offset_right = 217.0
 offset_bottom = 134.0
 theme_override_constants/separation = 10
 
-[node name="ChaseCameraButton" type="Button" parent="UI/VBoxContainer" unique_id=875899827]
+[node name="ChaseCameraButton" type="Button" parent="UI/CameraControls" unique_id=875899827]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_grrlh")
@@ -185,7 +185,7 @@ theme_override_styles/hover_pressed = ExtResource("11_bsumw")
 text = "Chase Camera"
 alignment = 0
 
-[node name="BirdsEyeCameraButton" type="Button" parent="UI/VBoxContainer" unique_id=603355584]
+[node name="BirdsEyeCameraButton" type="Button" parent="UI/CameraControls" unique_id=603355584]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_grrlh")
@@ -211,5 +211,5 @@ grow_vertical = 0
 text = "Seed: 0"
 label_settings = ExtResource("7_4dugh")
 
-[connection signal="pressed" from="UI/VBoxContainer/ChaseCameraButton" to="." method="_on_chase_camera_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer/BirdsEyeCameraButton" to="." method="_on_birds_eye_camera_button_pressed"]
+[connection signal="pressed" from="UI/CameraControls/ChaseCameraButton" to="." method="_on_chase_camera_button_pressed"]
+[connection signal="pressed" from="UI/CameraControls/BirdsEyeCameraButton" to="." method="_on_birds_eye_camera_button_pressed"]

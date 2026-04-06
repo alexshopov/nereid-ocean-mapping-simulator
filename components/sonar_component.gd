@@ -11,6 +11,8 @@ signal sonar_return(ping: PingData)
 
 const MARCH_STEP := 0.5
 
+var scanning := true
+
 var _time_accum: float = 0.0
 var _beam_mesh: ImmediateMesh
 
@@ -28,6 +30,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if not scanning:
+		return
 	_time_accum += delta
 	if _time_accum >= 1.0 / ping_rate_hz:
 		_time_accum = 0.0
