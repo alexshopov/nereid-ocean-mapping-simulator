@@ -9,9 +9,12 @@ extends Node
 @onready var bathy_mapping_manager: BathymetricMappingManager = $BathymetricMappingManager
 @onready var seed_label: Label = %SeedLabel
 @onready var navigation_component: NavigationComponent = $VehicleManager/BlueBoat/NavigationComponent
+@onready var sim_speed_label : Label = %SimSpeedLabel
 
 
 func _ready() -> void:
+	Engine.time_scale = 1.0
+
 	if Engine.is_editor_hint():
 		return
 
@@ -37,6 +40,13 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("view_active_vehicle"):
 			_on_chase_camera_button_pressed()
 
+		if Input.is_action_just_pressed("set_speed_1"):
+			_set_time_scale(1.0)
+		elif Input.is_action_just_pressed("set_speed_2"):
+			_set_time_scale(4.0)
+		elif Input.is_action_just_pressed("set_speed_3"):
+			_set_time_scale(8.0)
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -58,3 +68,8 @@ func _on_birds_eye_camera_button_pressed() -> void:
 	camera.global_position = Vector3(-150, 750, -25)
 	camera.rotation_degrees = Vector3(-90, 0, 0)
 	map_marker.show()
+
+
+func _set_time_scale(time_scale: float) -> void:
+	Engine.time_scale = time_scale
+	sim_speed_label.text = "Simulation Speed: %dx" % time_scale

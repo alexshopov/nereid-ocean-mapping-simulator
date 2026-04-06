@@ -7,3 +7,19 @@ Web Demo: [NERIED Ocean Mapping on itch.io](https://ecodevguy.itch.io/nereid-oce
 ## Requirements
 
 [Godot 4.6](https://godotengine.org/download/archive/4.6-stable/) 
+
+## Controls
+
+### Camera
+
+b : set camera to bird's eye view
+
+v : set camera to chase active vehicle
+
+### Simulation Speed
+
+1 : normal speed
+
+2 : 2x speed
+
+3 : 4x speed

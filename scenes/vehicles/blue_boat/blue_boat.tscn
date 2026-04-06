@@ -21,5 +21,6 @@ metadata/_custom_type_script = "uid://c4ssqybl7m4v5"
 script = ExtResource("5_cjaur")
 propulsion_component = NodePath("../PropulsionComponent")
 
-[node name="SonarComponent" type="Node3D" parent="." unique_id=1718158195]
+[node name="SonarComponent" type="Node3D" parent="." unique_id=149297549]
 script = ExtResource("3_5oqgq")
+ping_rate_hz = 5.0
